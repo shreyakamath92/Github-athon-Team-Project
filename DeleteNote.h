@@ -18,7 +18,7 @@ class DeleteNote {
   // deleting function
   void deleteNotes(vector<Note>&, int);
 
-  // ~DeleteNote();
+  ~DeleteNote() {};
 
 };
 #endif
