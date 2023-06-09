@@ -17,18 +17,22 @@ class AddNote {
   public:
   // constructor
   AddNote();
+
   // vector storing user notes
   vector<Note>notes;
   vector<string>titles;
+
   // functions
   void addNote(Note);
   void printNotes();
   void titlesVector(Note);
+
   // sorting functions
   void sortByTime(vector<Note>&);
   void sortByTitle(vector<Note>&);
 
   string convertTimes(time_t);
+
   // decontructor
   ~AddNote() {};
 };
