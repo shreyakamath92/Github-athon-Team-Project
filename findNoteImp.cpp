@@ -5,60 +5,36 @@
 #include <iostream>
 #include <vector>
 #include <cstring>
+#include <stdio.h>
+#include <string.h>
 
 using namespace std;
 
 // constructor
 findNote::findNote() { }
 
-//Make a string capital
-void findNote::toUppercase(string& title) {
-  char s;
-  string str, strTochr;
-  str = "";
-  
-  for(int i = 0; i < title.size(); i++) {
-    // shift all characters to uppercase
-    s = toupper(title[i]);
-    str += s;
-  }
-  title = str;
-} 
-
-// create titles vector
-void findNote::titlesVector(vector<Note>notes) {
-  string str;
-
-  for(int i = 0; i < notes.size(); i++) {
-    str = notes[i].getTitle(); //Takes title
-    toUppercase(str);
-    titles[i] = str;
-  }
-}
-
-void findNote::look(string key){
-  // shift key to uppercase
-  toUppercase(key);
-  
+//uses linear search to find requested title in all of the note obkects
+void findNote::look(vector<Note>notes, string key){
   // linear search
-  for (int i = 0; i < titles.size(); i++) {
-    if (titles[i] == key)
+  for (int i = 0; i < notes.size(); i++) {
+    if (notes[i].getTitle().compare(key) == 0)
       index = i; 
     else
       index = -1;
   }
 }
 
+//coverting time in sec  to readable time
 string findNote::convertTimes(time_t time) {
   return ctime(&time);
 }
 
-
+//if element is found, print all corresponding aspects of eleement. if not, return error message
 void findNote::whenFound(vector<Note>notes) {
   if(index != -1) {
-    cout << convertTimes(notes[index].getTime()) << "\t" << notes[index].getTitle() << "\n\t" << notes[index].getContent() << "\n" << endl;
+    cout << "\n" << convertTimes(notes[index].getTime()) << "\t" << notes[index].getTitle() << "\n\t" << notes[index].getContent() << "\n" << endl;
   }
   else {
-    cout << "Your note was not found in the database.";
+    cout << "\nYour note was not found in the database.";
   }
 }
