@@ -24,6 +24,7 @@ class Note {
     time_t getTime();
     string getTitle();
     string getContent();
+
     // setter functions
     void setTitle(string);
     void setContent(string);
