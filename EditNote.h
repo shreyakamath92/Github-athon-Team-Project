@@ -12,6 +12,7 @@ class EditNote {
   public: 
   // constructor
   EditNote();
+
   // editing notes function, 4 parameters
   void editNotes(vector<Note>&, int, int, string);
   
