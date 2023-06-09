@@ -25,13 +25,13 @@ void AddNote::printNotes() {
   }
 }
 
-
+//turning time in seconds into a readable format
 string AddNote::convertTimes(time_t datetime) {
   return ctime(&datetime);
 }
 
 
-// sorting alphabetically
+// sorting alphabetically - bubble sort
 void AddNote::sortByTitle(vector<Note>&notes) {
   // storing size of vector holding notes
   int size = notes.size();
@@ -43,7 +43,7 @@ void AddNote::sortByTitle(vector<Note>&notes) {
       }
 } 
 
-// sorting chronologically
+// sorting chronologically - bubble sort
 void AddNote::sortByTime(vector<Note>&notes) {
   // storing size of vector holding notes
   int size = notes.size();
