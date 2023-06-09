@@ -20,9 +20,7 @@ public:
 findNote();
 
 // public functions
-void toUppercase(string&);
-void titlesVector(vector<Note>);
-void look(string);
+void look(vector<Note>, string);
 void whenFound(vector<Note>);
 string convertTimes(time_t);
 
